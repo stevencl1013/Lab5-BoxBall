@@ -61,13 +61,13 @@ public class BallDemo
     public void boxBounce(int n)
     {
         Random rand = new Random();
-        myCanvas.drawLine(50, 100, 550, 100); // draws rectangle
-        myCanvas.drawLine(50, 400, 550, 400);
-        myCanvas.drawLine(50, 100, 50, 400);
-        myCanvas.drawLine(550, 100, 550, 400);
+        myCanvas.drawLine(10, 10, myCanvas.getSize().width-10, 10); // draws rectangle
+        myCanvas.drawLine(10, myCanvas.getSize().height-10, myCanvas.getSize().width-10, myCanvas.getSize().height-10);
+        myCanvas.drawLine(10, 10, 10, myCanvas.getSize().height-10);
+        myCanvas.drawLine(myCanvas.getSize().width-10, 10, myCanvas.getSize().width-10, myCanvas.getSize().height-10);
         for(int i = 0; i < n; i++) // creates n balls
         {
-            balls.add(new BoxBall(100, 400, 50, 550, myCanvas));
+            balls.add(new BoxBall(10, myCanvas.getSize().height-10, 10, myCanvas.getSize().width-10, myCanvas));
         }
         for(BoxBall ball : balls) // draws balls
         {
